@@ -1,0 +1,190 @@
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  min-height: calc(100vh - 64px);
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at 20% 10%,
+      rgba(255, 0, 0, 0.025),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #050505 0%,
+      #101010 50%,
+      #1a1a1a 100%
+    );
+
+  border-right: 1px solid #292929;
+
+  padding: 20px 12px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.link,
+.active {
+  position: relative;
+
+  display: block;
+
+  padding: 11px 14px;
+  margin-bottom: 5px;
+
+  border-radius: 7px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.link {
+  color: #a8a8a8;
+  background: transparent;
+}
+
+.link:hover {
+  color: #e5e5e5;
+
+  background: linear-gradient(
+    90deg,
+    rgba(179, 0, 0, 0.06),
+    rgba(179, 0, 0, 0.02)
+  );
+
+  box-shadow:
+    inset 2px 0 0 #8f0000;
+
+  transform: translateX(1px);
+}
+
+.active {
+  color: #f5f5f5;
+
+  font-weight: 600;
+
+  background: linear-gradient(
+    90deg,
+    #5f0000 0%,
+    #4a0000 55%,
+    #2b0a0a 100%
+  );
+
+  box-shadow:
+    inset 2px 0 0 #b80000,
+    0 0 6px rgba(255, 0, 0, 0.06);
+}
+
+.active::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+
+  width: 2px;
+
+  background: #b80000;
+
+  border-radius: 0 3px 3px 0;
+
+  box-shadow:
+    0 0 3px rgba(255, 0, 0, 0.35);
+}
+
+.active::after {
+  content: "";
+
+  position: absolute;
+
+  right: 10px;
+  top: 50%;
+
+  width: 3px;
+  height: 3px;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: #c44822;
+
+  box-shadow:
+    0 0 3px rgba(255, 69, 0, 0.35);
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .link,
+  .active {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+
+    border-right: none;
+    border-bottom: 1px solid #292929;
+
+    padding: 10px 12px;
+
+    overflow-x: auto;
+  }
+
+  .sidebar nav {
+    display: flex;
+    gap: 6px;
+
+    width: max-content;
+  }
+
+  .link,
+  .active {
+    display: block;
+
+    white-space: nowrap;
+
+    margin-bottom: 0;
+
+    padding: 10px 14px;
+  }
+
+  .active::before {
+    left: 6px;
+    top: 5px;
+    bottom: 5px;
+  }
+
+  .active::after {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 8px 10px;
+  }
+
+  .link,
+  .active {
+    padding: 9px 12px;
+  }
+}
