@@ -6,7 +6,7 @@ import {
 
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Login from "./pages/Login";
-import AppLayout from "./components/layout/AppLayout";
+import AppLayout from "./components/layout/Applayout";
 import Inventory from "./pages/Inventory/Inventory";
 import Replenishment from "./pages/Replenishment/Replenishment";
 import Forecasting from "./pages/Forecasting/Forecasting";
